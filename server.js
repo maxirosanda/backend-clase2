@@ -35,7 +35,7 @@ app.set('view engine', 'hbs');
 
 routesProducts(app)
 // servidor
-
-app.listen(3000, () => {
-    console.log(`el servidor esta corriendo en : http://localhost:${3000}`)
+const port = process.env.PORT || '8080'
+app.listen(port, () => {
+    console.log(`el servidor esta corriendo en : http://localhost:${port}`)
   })
