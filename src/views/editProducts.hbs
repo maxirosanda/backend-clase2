@@ -1,0 +1,36 @@
+<h1>Editar Productos</h1>
+
+<form method="post" action="/products">
+    <input placeholder="Nombre Producto" type="text" name="title" required >
+    <input placeholder="Precio" type="number" name="price" required>
+    <input placeholder="stock" type="number" name="stock" required>
+    <button type="submit">Ingresar Producto</button>
+
+</form>
+
+<div class="row m-5 justify-content-around">
+
+{{#each productsParaLaVista}}
+ 
+<div class="card m-3" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    
+    <form action="/products?_method=PUT" method="post" >
+         <input type="hidden" name="id" value={{id}}>
+        <input name="title" placeholder={{title}}>
+        <input name="price" placeholder={{price}}>
+        <input name="stock" placeholder={{stock}}>
+        <button type="submit-">Actualizar</button>
+    </form>
+    
+    <form action="/products?_method=DELETE" method="post">
+        <input type="hidden" name="id" value={{id}}>
+        <button type="submit">Borrar</button>
+    </form>
+
+  </div>
+</div>
+
+{{/each}}
+</div>
